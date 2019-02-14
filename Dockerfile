@@ -13,7 +13,6 @@ ENV GCC_VERSION=5.4.0
 ENV ZLIB_DEVEL_VERSION=1.2.7
 
 RUN yum group install -y "Development Tools"
-# RUN yum install -y wget
 
 RUN cd /tmp \
     && curl https://ftp.gnu.org/gnu/gcc/gcc-${GCC_VERSION}/gcc-${GCC_VERSION}.tar.bz2 -O \
@@ -33,5 +32,4 @@ RUN cd /tmp \
     && make \
     && mv ./Genrich /usr/bin/
 
-# ENTRYPOINT ["/bin/bash"]
 ENTRYPOINT ["/usr/bin/Genrich"]
