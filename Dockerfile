@@ -1,10 +1,10 @@
 FROM centos:7
 
 LABEL maintainer="Jaeyoung Chun (chunj@mskcc.org)" \
-      version.genrich="0.5" \
-      source.genrich="https://github.com/jsh58/Genrich/releases/tag/v0.5"
+      version.genrich="0.6" \
+      source.genrich="https://github.com/jsh58/Genrich/releases/tag/v0.6"
 
-ENV GENRICH_VERSION 0.5
+ENV GENRICH_VERSION 0.6
 
 # As of 2019-02-13
 # Genrich v0.5 was successfully tested with GCC 5.4.0 and ZLIB 1.2.8
@@ -31,5 +31,7 @@ RUN cd /tmp \
     && cd Genrich-${GENRICH_VERSION} \
     && make \
     && mv ./Genrich /usr/bin/
+
+RUN rm -rf /tmp/*
 
 ENTRYPOINT ["/usr/bin/Genrich"]
