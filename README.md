@@ -3,6 +3,5 @@
 ## Building
 
 ```bash
-$ docker build -t genrich .
+$ ./build.sh
 ```
-
